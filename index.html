@@ -44,7 +44,7 @@
           <li><a href="#projects">Community Impact</a></li>
           <li><a href="#supporters">Wall of Hope</a></li>
           <li><a href="https://kalangohelpingpeoplesfoundation.com.ng" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700;">Main Site ↗</a></li>
-          <li><a href="#donate" class="nav-cta">Donate Now</a></li>
+          <li><a href="#footer-donate" class="nav-cta">Donate Now</a></li>
         </ul>
       </nav>
     </div>
@@ -62,7 +62,7 @@
           This festive season, the Kalango Helping People's Foundation is launching a comprehensive welfare program in Nembe, Bayelsa State. We are distributing food packs, donating wheelchairs, providing scholarships, and hosting New Year and Christmas parties for vulnerable families. Partner with us to change lives.
         </p>
         <div class="hero-ctas">
-          <a href="#donate" class="btn btn-primary">Donate Today</a>
+          <a href="#footer-donate" class="btn btn-primary">Donate Today</a>
           <a href="#programs" class="btn btn-secondary">Explore Programs</a>
         </div>
         
@@ -291,126 +291,7 @@
     </div>
   </section>
 
-  <!-- Donation Hub -->
-  <section class="section donation-section" id="donate">
-    <div class="container">
 
-      <!-- Centered Calculator Card -->
-      <div class="calculator-card" style="max-width: 700px; margin: 0 auto 80px auto;">
-        <h3 class="calc-title">
-          <span class="calc-title-icon">💡</span>
-          See Your Impact
-        </h3>
-        <p class="form-label" style="margin-bottom: 12px;">Choose a donation level to see the difference you make:</p>
-        <div class="amount-selector">
-          <button class="amount-btn active" data-amount="5000">5,000 ₦</button>
-          <button class="amount-btn" data-amount="20000">20,000 ₦</button>
-          <button class="amount-btn" data-amount="50000">50,000 ₦</button>
-          <button class="amount-btn" data-amount="75000">75,000 ₦</button>
-        </div>
-        
-        <div class="custom-amount-wrapper">
-          <span>₦</span>
-          <input type="number" class="custom-amount-input" id="custom-amount" placeholder="Enter custom amount" min="500">
-        </div>
-        
-        <div class="calc-impact-box">
-          <span class="calc-impact-label">Your Donation Will Support</span>
-          <p class="calc-impact-text" id="impact-display">
-            A festive food pack containing rice, oil, and essentials for a needy family in Nembe.
-          </p>
-        </div>
-        
-        <a href="#bank-transfer-section" class="btn btn-primary" style="width: 100%;">View Bank Transfer Details</a>
-      </div>
-
-      <!-- Direct Bank Transfer Section -->
-      <div class="bank-transfer-container" id="bank-transfer-section">
-        <div class="bank-transfer-header">
-          <!-- Styled Bank Building Icon -->
-          <div class="bank-icon-wrapper">
-            <svg class="bank-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
-              <path d="M12 2L2 7v3h20V7L12 2zm9 10H3v7h3v-4h3v4h6v-4h3v4h3v-7zm-5 5h-2v-3h2v3z"/>
-            </svg>
-          </div>
-          <h3 class="bank-transfer-title">Direct Bank Transfer</h3>
-          <p class="bank-transfer-desc">
-            Prefer to donate via bank transfer? We accept donations in multiple currencies. Choose the account that works best for you.
-          </p>
-        </div>
-
-        <div class="bank-cards-grid">
-          <!-- Card 1: Naira NGN -->
-          <div class="bank-account-card">
-            <span class="currency-badge currency-ngn-badge">Nigerian Naira (NGN)</span>
-            <div class="card-field">
-              <span class="field-label">ACCOUNT NAME</span>
-              <p class="field-value">Kalango Helping People's Foundation</p>
-            </div>
-            <div class="card-field">
-              <span class="field-label">ACCOUNT NUMBER</span>
-              <div class="field-number-wrapper">
-                <span class="field-num-val" id="acc-num-ngn">2008211160</span>
-                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-ngn', this)">Copy</button>
-              </div>
-            </div>
-            <div class="card-field">
-              <span class="field-label">BANK</span>
-              <p class="field-value-bank">FCMB</p>
-            </div>
-          </div>
-
-          <!-- Card 2: USD Dollar -->
-          <div class="bank-account-card">
-            <span class="currency-badge currency-usd-badge">U.S. Dollar (USD)</span>
-            <div class="card-field">
-              <span class="field-label">ACCOUNT NAME</span>
-              <p class="field-value">Kalango Helping People's Foundation</p>
-            </div>
-            <div class="card-field">
-              <span class="field-label">ACCOUNT NUMBER</span>
-              <div class="field-number-wrapper">
-                <span class="field-num-val" id="acc-num-usd">2008306594</span>
-                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-usd', this)">Copy</button>
-              </div>
-            </div>
-            <div class="card-field">
-              <span class="field-label">BANK</span>
-              <p class="field-value-bank">FCMB</p>
-            </div>
-          </div>
-
-          <!-- Card 3: GBP Pound -->
-          <div class="bank-account-card">
-            <span class="currency-badge currency-gbp-badge">Pound Sterling (GBP)</span>
-            <div class="card-field">
-              <span class="field-label">ACCOUNT NAME</span>
-              <p class="field-value">Kalango Helping People's Foundation</p>
-            </div>
-            <div class="card-field">
-              <span class="field-label">ACCOUNT NUMBER</span>
-              <div class="field-number-wrapper">
-                <span class="field-num-val" id="acc-num-gbp">2008315336</span>
-                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-gbp', this)">Copy</button>
-              </div>
-            </div>
-            <div class="card-field">
-              <span class="field-label">BANK</span>
-              <p class="field-value-bank">FCMB</p>
-            </div>
-          </div>
-        </div>
-
-        <p class="bank-transfer-footer">
-          * Please verify and send a receipt of your transfer via WhatsApp 
-          <a href="https://wa.me/16143778612" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: underline;">
-            +1 (614) 377-8612
-          </a> so we can thank you and list you on our Supporter Wall of Hope.
-        </p>
-      </div>
-
-    </div>
-  </section>
 
   <!-- Supporter Wall of Hope -->
   <section class="section wall-section" id="supporters">
@@ -451,8 +332,86 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer id="footer">
     <div class="container">
+      <!-- Footer Bank Details Block -->
+      <div id="footer-donate" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 40px;">
+        <div class="bank-transfer-header">
+          <!-- Styled Bank Building Icon -->
+          <div class="bank-icon-wrapper" style="background-color: rgba(255, 255, 255, 0.1); color: var(--secondary);">
+            <svg class="bank-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
+              <path d="M12 2L2 7v3h20V7L12 2zm9 10H3v7h3v-4h3v4h6v-4h3v4h3v-7zm-5 5h-2v-3h2v3z"/>
+            </svg>
+          </div>
+          <h3 class="bank-transfer-title" style="color: white;">Direct Bank Transfer</h3>
+          <p class="bank-transfer-desc" style="color: rgba(255,255,255,0.7);">
+            Prefer to donate via bank transfer? We accept donations in multiple currencies. Choose the account that works best for you.
+          </p>
+        </div>
+
+        <div class="bank-cards-grid">
+          <!-- Card 1: Naira NGN -->
+          <div class="bank-account-card" style="background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <span class="currency-badge currency-ngn-badge" style="background-color: var(--secondary); color: var(--primary);">Nigerian Naira (NGN)</span>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">ACCOUNT NAME</span>
+              <p class="field-value" style="color: white;">Kalango Helping People's Foundation</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">ACCOUNT NUMBER</span>
+              <div class="field-number-wrapper" style="background-color: rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.15);">
+                <span class="field-num-val" id="acc-num-ngn" style="color: var(--secondary);">2008211160</span>
+                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-ngn', this)">Copy</button>
+              </div>
+            </div>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">BANK</span>
+              <p class="field-value-bank" style="color: var(--secondary);">FCMB</p>
+            </div>
+          </div>
+
+          <!-- Card 2: USD Dollar -->
+          <div class="bank-account-card" style="background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <span class="currency-badge currency-usd-badge" style="background-color: var(--secondary); color: var(--primary);">U.S. Dollar (USD)</span>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">ACCOUNT NAME</span>
+              <p class="field-value" style="color: white;">Kalango Helping People's Foundation</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">ACCOUNT NUMBER</span>
+              <div class="field-number-wrapper" style="background-color: rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.15);">
+                <span class="field-num-val" id="acc-num-usd" style="color: var(--secondary);">2008306594</span>
+                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-usd', this)">Copy</button>
+              </div>
+            </div>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">BANK</span>
+              <p class="field-value-bank" style="color: var(--secondary);">FCMB</p>
+            </div>
+          </div>
+
+          <!-- Card 3: GBP Pound -->
+          <div class="bank-account-card" style="background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <span class="currency-badge currency-gbp-badge" style="background-color: var(--secondary); color: var(--primary);">Pound Sterling (GBP)</span>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">ACCOUNT NAME</span>
+              <p class="field-value" style="color: white;">Kalango Helping People's Foundation</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">ACCOUNT NUMBER</span>
+              <div class="field-number-wrapper" style="background-color: rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.15);">
+                <span class="field-num-val" id="acc-num-gbp" style="color: var(--secondary);">2008315336</span>
+                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-gbp', this)">Copy</button>
+              </div>
+            </div>
+            <div class="card-field">
+              <span class="field-label" style="color: rgba(255,255,255,0.6);">BANK</span>
+              <p class="field-value-bank" style="color: var(--secondary);">FCMB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-grid">
         <div class="footer-about">
           <div class="footer-logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
@@ -472,7 +431,7 @@
             <li><a href="#about">Our Mission</a></li>
             <li><a href="#programs">Festive Programs</a></li>
             <li><a href="#projects">Community Impact</a></li>
-            <li><a href="#donate">Donate Details</a></li>
+            <li><a href="#footer-donate">Donate Details</a></li>
           </ul>
         </div>
         
