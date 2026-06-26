@@ -82,26 +82,27 @@ document.addEventListener('DOMContentLoaded', () => {
       return "Please enter a valid donation amount to see its impact.";
     }
     
-    if (amount < 3000) {
+    if (amount < 5000) {
       return "A warm contribution supporting logistics and essential coordination for our local projects.";
-    } else if (amount >= 3000 && amount < 5000) {
-      return "Sponsors a complete festive holiday meal, party favors, and gift bags for 1 child at our Christmas and New Year gathering!";
-    } else if (amount >= 5000 && amount < 15000) {
-      return "Buys a family-sized food pack containing rice, beans, cooking oil, tomato paste, and spices, sustaining a needy family for the holidays.";
-    } else if (amount >= 15000 && amount < 20000) {
-      return "Sponsors three family food packs OR covers complete holiday clothes and shoes for two children in the community.";
-    } else if (amount >= 20000 && amount < 50000) {
-      return "Sponsors primary school tuition, textbooks, backpacks, and school uniform for one child's upcoming term in Nembe!";
-    } else if (amount >= 50000 && amount < 130000) {
-      return "Provides a micro-empowerment grant or essential business equipment (like a sewing machine or hair dryer) to help a widow start her own trade!";
-    } else {
+    } else if (amount >= 5000 && amount < 100000) {
+      const count = Math.floor(amount / 5000);
+      return `Sponsors approximately ${count} food pack${count > 1 ? 's' : ''} or child holiday celebration pack${count > 1 ? 's' : ''} in Nembe!`;
+    } else if (amount >= 100000 && amount < 130000) {
+      const studentCount = Math.floor(amount / 100000);
+      return `Sponsors academic scholarship & supplies for ${studentCount} student${studentCount > 1 ? 's' : ''} in Nembe!`;
+    } else if (amount >= 130000 && amount < 250000) {
       const wheelchairCount = Math.floor(amount / 130000);
-      const remainder = amount % 130000;
-      
-      let text = `Sponsors ${wheelchairCount} high-quality, durable wheelchair${wheelchairCount > 1 ? 's' : ''} to restore complete mobility and dignity to ${wheelchairCount > 1 ? 'disabled individuals' : 'a disabled person'} in Nembe!`;
-      
-      if (remainder >= 5000) {
-        text += ` PLUS a family-sized food pack for local support!`;
+      return `Sponsors ${wheelchairCount} high-quality, durable wheelchair${wheelchairCount > 1 ? 's' : ''} to restore complete mobility and dignity!`;
+    } else {
+      const grantCount = Math.floor(amount / 250000);
+      const remainder = amount % 250000;
+      let text = `Sponsors ${grantCount} micro-empowerment grant${grantCount > 1 ? 's' : ''} of 250,000 NGN to help widows and youth start self-sustaining trade businesses!`;
+      if (remainder >= 130000) {
+        text += ` Plus ${Math.floor(remainder / 130000)} wheelchair(s) for mobility support!`;
+      } else if (remainder >= 100000) {
+        text += ` Plus academic scholarship support for a student!`;
+      } else if (remainder >= 5000) {
+        text += ` Plus ${Math.floor(remainder / 5000)} food pack(s)!`;
       }
       return text;
     }
@@ -227,6 +228,53 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // =========================================================================
+  // 7. Image Slideshow / Cycling (Cycles images every 2 minutes)
+  // =========================================================================
+  const slideshows = [
+    {
+      imgId: 'wheelchair-img',
+      images: ['assets/wheelchair_1.jpg', 'assets/wheelchair_2.jpg', 'assets/wheelchair_3.jpg']
+    },
+    {
+      imgId: 'food-img',
+      images: ['assets/food_1.jpg', 'assets/food_2.jpg', 'assets/food_3.jpg']
+    },
+    {
+      imgId: 'party-img',
+      images: ['assets/party_1.jpg', 'assets/party_2.jpg', 'assets/party_3.jpg']
+    },
+    {
+      imgId: 'scholarship-img',
+      images: ['assets/scholarship_1.jpg', 'assets/scholarship_2.jpg', 'assets/scholarship_3.jpg']
+    }
+  ];
+
+  slideshows.forEach(slide => {
+    const imgEl = document.getElementById(slide.imgId);
+    if (!imgEl) return;
+    
+    let currentIndex = 0;
+    
+    setInterval(() => {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * slide.images.length);
+      } while (newIndex === currentIndex);
+      
+      currentIndex = newIndex;
+      
+      // Smooth fade transition
+      imgEl.style.transition = 'opacity 0.5s ease';
+      imgEl.style.opacity = 0;
+      
+      setTimeout(() => {
+        imgEl.src = slide.images[currentIndex];
+        imgEl.style.opacity = 1;
+      }, 500);
+    }, 120000); // 2 minutes
+  });
 
   // Initial render
   renderSupporters();
