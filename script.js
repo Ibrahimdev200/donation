@@ -259,12 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerId = null;
     
     const showNextImage = () => {
-      let newIndex;
-      do {
-        newIndex = Math.floor(Math.random() * slide.images.length);
-      } while (newIndex === currentIndex);
-      
-      currentIndex = newIndex;
+      currentIndex = (currentIndex + 1) % slide.images.length;
       
       // Smooth fade transition
       imgEl.style.transition = 'opacity 0.3s ease';
