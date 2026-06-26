@@ -35,10 +35,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 3. Copy Account Number Functionality
+  // 3. Copy Account Number & Currency Tab Switching
   // =========================================================================
   const copyBtn = document.getElementById('copy-acc-btn');
   const accNumSpan = document.getElementById('acc-num');
+  const currencyBtns = document.querySelectorAll('.currency-tab-btn');
+  const currencyLabel = document.getElementById('currency-label');
+
+  const bankAccounts = {
+    ngn: { number: '2008211160', label: 'Account Number (Naira NGN)' },
+    usd: { number: '2008306594', label: 'Account Number (US Dollar USD)' },
+    gbp: { number: '2008315336', label: 'Account Number (Pound Sterling GBP)' }
+  };
+
+  if (currencyBtns.length > 0 && accNumSpan && currencyLabel) {
+    currencyBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currencyBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const currency = btn.getAttribute('data-currency');
+        const accInfo = bankAccounts[currency];
+
+        accNumSpan.textContent = accInfo.number;
+        currencyLabel.textContent = accInfo.label;
+      });
+    });
+  }
 
   if (copyBtn && accNumSpan) {
     copyBtn.addEventListener('click', () => {

@@ -1244,3 +1244,80 @@ footer {
     align-items: center;
   }
 }
+
+/* Currency Tabs inside Account Card */
+.currency-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 8px;
+}
+
+.currency-tab-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+}
+
+.currency-tab-btn:hover {
+  color: var(--white);
+}
+
+.currency-tab-btn.active {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  font-weight: 700;
+}
+
+/* Main Website Info Banner Callout */
+.main-site-banner {
+  background-color: var(--secondary-light);
+  border-bottom: 1px solid var(--secondary);
+  padding: 12px 0;
+  text-align: center;
+}
+
+.main-site-banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.banner-badge {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.banner-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-hover);
+}
+
+.banner-link {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.banner-link:hover {
+  color: var(--accent);
+}
+
