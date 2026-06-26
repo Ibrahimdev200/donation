@@ -1245,36 +1245,179 @@ footer {
   }
 }
 
-/* Currency Tabs inside Account Card */
-.currency-tabs {
+/* Bank Transfer Container & Header */
+.bank-transfer-container {
+  margin-top: 60px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 50px 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bank-transfer-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.bank-icon-wrapper {
+  background-color: rgba(15, 81, 50, 0.08);
+  color: var(--primary);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
 }
 
-.currency-tab-btn {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 600;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 14px;
+.bank-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.bank-transfer-title {
+  font-size: 28px;
+  color: var(--dark);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.bank-transfer-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Bank Cards Grid */
+.bank-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.bank-account-card {
+  background-color: rgba(241, 245, 249, 0.5); /* Slate 100 soft transparent */
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: var(--transition);
-  border-bottom: 2px solid transparent;
 }
 
-.currency-tab-btn:hover {
-  color: var(--white);
+.bank-account-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--secondary-light);
 }
 
-.currency-tab-btn.active {
-  color: var(--secondary);
-  border-color: var(--secondary);
+/* Currency Pill Badges */
+.currency-badge {
+  font-size: 13px;
   font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.currency-ngn-badge, .currency-usd-badge, .currency-gbp-badge {
+  background-color: rgba(15, 81, 50, 0.08);
+  color: var(--primary);
+}
+
+/* Fields layout */
+.card-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-field:last-child {
+  margin-bottom: 0;
+}
+
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.field-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.4;
+}
+
+.field-value-bank {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.field-number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  width: 100%;
+}
+
+.field-num-val {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-hover);
+  letter-spacing: 0.5px;
+}
+
+.card-copy-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.card-copy-btn:hover {
+  background-color: var(--accent);
+}
+
+.card-copy-btn.copied {
+  background-color: #22c55e;
+}
+
+.bank-transfer-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+/* Responsive Grid adjustment */
+@media (max-width: 991px) {
+  .bank-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* Main Website Info Banner Callout */

@@ -35,66 +35,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 3. Copy Account Number & Currency Tab Switching
+  // 3. Copy Account Number Functionality (for multiple cards)
   // =========================================================================
-  const copyBtn = document.getElementById('copy-acc-btn');
-  const accNumSpan = document.getElementById('acc-num');
-  const currencyBtns = document.querySelectorAll('.currency-tab-btn');
-  const currencyLabel = document.getElementById('currency-label');
-
-  const bankAccounts = {
-    ngn: { number: '2008211160', label: 'Account Number (Naira NGN)' },
-    usd: { number: '2008306594', label: 'Account Number (US Dollar USD)' },
-    gbp: { number: '2008315336', label: 'Account Number (Pound Sterling GBP)' }
-  };
-
-  if (currencyBtns.length > 0 && accNumSpan && currencyLabel) {
-    currencyBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        currencyBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const currency = btn.getAttribute('data-currency');
-        const accInfo = bankAccounts[currency];
-
-        accNumSpan.textContent = accInfo.number;
-        currencyLabel.textContent = accInfo.label;
+  window.copyAccountNumber = (elementId, btnElement) => {
+    const numSpan = document.getElementById(elementId);
+    if (!numSpan) return;
+    const textToCopy = numSpan.textContent.trim();
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        btnElement.textContent = 'Copied!';
+        btnElement.classList.add('copied');
+        
+        setTimeout(() => {
+          btnElement.textContent = 'Copy';
+          btnElement.classList.remove('copied');
+        }, 2500);
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+        // Fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        btnElement.textContent = 'Copied!';
+        btnElement.classList.add('copied');
+        setTimeout(() => {
+          btnElement.textContent = 'Copy';
+          btnElement.classList.remove('copied');
+        }, 2500);
       });
-    });
-  }
-
-  if (copyBtn && accNumSpan) {
-    copyBtn.addEventListener('click', () => {
-      const textToCopy = accNumSpan.textContent.trim();
-      navigator.clipboard.writeText(textToCopy)
-        .then(() => {
-          copyBtn.textContent = 'Copied!';
-          copyBtn.classList.add('copied');
-          
-          setTimeout(() => {
-            copyBtn.textContent = 'Copy';
-            copyBtn.classList.remove('copied');
-          }, 2500);
-        })
-        .catch(err => {
-          console.error('Failed to copy account number: ', err);
-          // Fallback
-          const textarea = document.createElement('textarea');
-          textarea.value = textToCopy;
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textarea);
-          
-          copyBtn.textContent = 'Copied!';
-          copyBtn.classList.add('copied');
-          setTimeout(() => {
-            copyBtn.textContent = 'Copy';
-            copyBtn.classList.remove('copied');
-          }, 2500);
-        });
-    });
-  }
+  };
 
   // =========================================================================
   // 4. Donation Impact Calculator

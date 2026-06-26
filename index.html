@@ -296,82 +296,124 @@
         <span class="section-tag">Support Our Work</span>
         <h2 class="section-title">Every Donation Creates a Smile</h2>
         <p class="section-description">
-          We invite you to support our end of year project. You can choose a pre-calculated impact amount below or make a direct transfer to our official bank account.
+          We invite you to support our end of year project. You can choose a pre-calculated impact amount below to see how your gift transforms lives.
         </p>
       </div>
 
-      <div class="donation-grid">
+      <!-- Centered Calculator Card -->
+      <div class="calculator-card" style="max-width: 700px; margin: 0 auto 80px auto;">
+        <h3 class="calc-title">
+          <span class="calc-title-icon">💡</span>
+          See Your Impact
+        </h3>
+        <p class="form-label" style="margin-bottom: 12px;">Choose a donation level to see the difference you make:</p>
+        <div class="amount-selector">
+          <button class="amount-btn active" data-amount="5000">5,000 ₦</button>
+          <button class="amount-btn" data-amount="20000">20,000 ₦</button>
+          <button class="amount-btn" data-amount="50000">50,000 ₦</button>
+          <button class="amount-btn" data-amount="75000">75,000 ₦</button>
+        </div>
         
-        <!-- Interactive Donation Calculator -->
-        <div class="calculator-card">
-          <h3 class="calc-title">
-            <span class="calc-title-icon">💡</span>
-            See Your Impact
-          </h3>
-          <p class="form-label" style="margin-bottom: 12px;">Choose a donation level to see the difference you make:</p>
-          <div class="amount-selector">
-            <button class="amount-btn active" data-amount="5000">5,000 ₦</button>
-            <button class="amount-btn" data-amount="20000">20,000 ₦</button>
-            <button class="amount-btn" data-amount="50000">50,000 ₦</button>
-            <button class="amount-btn" data-amount="75000">75,000 ₦</button>
+        <div class="custom-amount-wrapper">
+          <span>₦</span>
+          <input type="number" class="custom-amount-input" id="custom-amount" placeholder="Enter custom amount" min="500">
+        </div>
+        
+        <div class="calc-impact-box">
+          <span class="calc-impact-label">Your Donation Will Support</span>
+          <p class="calc-impact-text" id="impact-display">
+            A festive food pack containing rice, oil, and essentials for a needy family in Nembe.
+          </p>
+        </div>
+        
+        <a href="#bank-transfer-section" class="btn btn-primary" style="width: 100%;">View Bank Transfer Details</a>
+      </div>
+
+      <!-- Direct Bank Transfer Section -->
+      <div class="bank-transfer-container" id="bank-transfer-section">
+        <div class="bank-transfer-header">
+          <!-- Styled Bank Building Icon -->
+          <div class="bank-icon-wrapper">
+            <svg class="bank-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
+              <path d="M12 2L2 7v3h20V7L12 2zm9 10H3v7h3v-4h3v4h6v-4h3v4h3v-7zm-5 5h-2v-3h2v3z"/>
+            </svg>
           </div>
-          
-          <div class="custom-amount-wrapper">
-            <span>₦</span>
-            <input type="number" class="custom-amount-input" id="custom-amount" placeholder="Enter custom amount" min="500">
-          </div>
-          
-          <div class="calc-impact-box">
-            <span class="calc-impact-label">Your Donation Will Support</span>
-            <p class="calc-impact-text" id="impact-display">
-              A festive food pack containing rice, oil, and essentials for a needy family in Nembe.
-            </p>
-          </div>
-          
-          <a href="#account-card-section" class="btn btn-primary" style="width: 100%;">Get Bank Details Below</a>
+          <h3 class="bank-transfer-title">Direct Bank Transfer</h3>
+          <p class="bank-transfer-desc">
+            Prefer to donate via bank transfer? We accept donations in multiple currencies. Choose the account that works best for you.
+          </p>
         </div>
 
-        <!-- Account details Card -->
-        <div class="account-card" id="account-card-section">
-          <span class="account-badge">Official NGO Account</span>
-          <h3 class="account-bank">First City Monument Bank (FCMB)</h3>
-          
-          <div>
-            <span class="account-label">Account Name</span>
-            <p class="account-value">Kalango Helping People's Foundation</p>
-          </div>
-          
-          <!-- Currency Tabs -->
-          <div class="currency-tabs">
-            <button class="currency-tab-btn active" data-currency="ngn">₦ NGN</button>
-            <button class="currency-tab-btn" data-currency="usd">$ USD</button>
-            <button class="currency-tab-btn" data-currency="gbp">£ GBP</button>
-          </div>
-          
-          <div>
-            <span class="account-label" id="currency-label">Account Number (Naira NGN)</span>
-            <div class="account-number-wrapper">
-              <span class="account-num-val" id="acc-num">2008211160</span>
-              <button class="copy-btn" id="copy-acc-btn">Copy</button>
+        <div class="bank-cards-grid">
+          <!-- Card 1: Naira NGN -->
+          <div class="bank-account-card">
+            <span class="currency-badge currency-ngn-badge">Nigerian Naira (NGN)</span>
+            <div class="card-field">
+              <span class="field-label">ACCOUNT NAME</span>
+              <p class="field-value">Kalango Helping People's Foundation</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label">ACCOUNT NUMBER</span>
+              <div class="field-number-wrapper">
+                <span class="field-num-val" id="acc-num-ngn">2008211160</span>
+                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-ngn', this)">Copy</button>
+              </div>
+            </div>
+            <div class="card-field">
+              <span class="field-label">BANK</span>
+              <p class="field-value-bank">FCMB</p>
             </div>
           </div>
-          
-          <p class="account-footer">
-            * Please send a receipt or notification of your donation via WhatsApp so we can thank you and record your name on our Supporter Wall of Hope!
-          </p>
-          
-          <!-- Contact Options -->
-          <div class="contact-options">
-            <a href="https://wa.me/16143778612" target="_blank" rel="noopener noreferrer" class="contact-link contact-link-wa">
-              <span>💬</span> WhatsApp Verify
-            </a>
-            <a href="tel:+2347070351737" class="contact-link">
-              <span>📞</span> Call Support
-            </a>
+
+          <!-- Card 2: USD Dollar -->
+          <div class="bank-account-card">
+            <span class="currency-badge currency-usd-badge">U.S. Dollar (USD)</span>
+            <div class="card-field">
+              <span class="field-label">ACCOUNT NAME</span>
+              <p class="field-value">Kalango Helping People's Foundation</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label">ACCOUNT NUMBER</span>
+              <div class="field-number-wrapper">
+                <span class="field-num-val" id="acc-num-usd">2008306594</span>
+                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-usd', this)">Copy</button>
+              </div>
+            </div>
+            <div class="card-field">
+              <span class="field-label">BANK</span>
+              <p class="field-value-bank">FCMB</p>
+            </div>
+          </div>
+
+          <!-- Card 3: GBP Pound -->
+          <div class="bank-account-card">
+            <span class="currency-badge currency-gbp-badge">Pound Sterling (GBP)</span>
+            <div class="card-field">
+              <span class="field-label">ACCOUNT NAME</span>
+              <p class="field-value">Kalango Helping People's Foundation</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label">ACCOUNT NUMBER</span>
+              <div class="field-number-wrapper">
+                <span class="field-num-val" id="acc-num-gbp">2008315336</span>
+                <button class="card-copy-btn" onclick="copyAccountNumber('acc-num-gbp', this)">Copy</button>
+              </div>
+            </div>
+            <div class="card-field">
+              <span class="field-label">BANK</span>
+              <p class="field-value-bank">FCMB</p>
+            </div>
           </div>
         </div>
 
+        <p class="bank-transfer-footer">
+          * Please verify and send a receipt of your transfer via WhatsApp 
+          <a href="https://wa.me/16143778612" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: underline;">
+            +1 (614) 377-8612
+          </a> so we can thank you and list you on our Supporter Wall of Hope.
+        </p>
       </div>
+
     </div>
   </section>
 
