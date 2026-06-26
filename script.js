@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 7. Image Slideshow / Cycling (Cycles images every 2 minutes)
+  // 7. Image Slideshow / Cycling (Cycles images every 1 minute & on click)
   // =========================================================================
   const slideshows = [
     {
@@ -256,8 +256,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!imgEl) return;
     
     let currentIndex = 0;
+    let timerId = null;
     
-    setInterval(() => {
+    const showNextImage = () => {
       let newIndex;
       do {
         newIndex = Math.floor(Math.random() * slide.images.length);
@@ -266,14 +267,29 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = newIndex;
       
       // Smooth fade transition
-      imgEl.style.transition = 'opacity 0.5s ease';
+      imgEl.style.transition = 'opacity 0.3s ease';
       imgEl.style.opacity = 0;
       
       setTimeout(() => {
         imgEl.src = slide.images[currentIndex];
         imgEl.style.opacity = 1;
-      }, 500);
-    }, 120000); // 2 minutes
+      }, 300);
+    };
+    
+    const resetTimer = () => {
+      if (timerId) clearInterval(timerId);
+      timerId = setInterval(showNextImage, 60000); // 1 minute (60,000 ms)
+    };
+    
+    // Initial timer setup
+    resetTimer();
+    
+    // Click event to immediately show next image and reset the timer
+    imgEl.style.cursor = 'pointer';
+    imgEl.addEventListener('click', () => {
+      showNextImage();
+      resetTimer();
+    });
   });
 
   // Initial render
