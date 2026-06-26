@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return "Sponsors three family food packs OR covers complete holiday clothes and shoes for two children in the community.";
     } else if (amount >= 20000 && amount < 50000) {
       return "Sponsors primary school tuition, textbooks, backpacks, and school uniform for one child's upcoming term in Nembe!";
-    } else if (amount >= 50000 && amount < 75000) {
+    } else if (amount >= 50000 && amount < 130000) {
       return "Provides a micro-empowerment grant or essential business equipment (like a sewing machine or hair dryer) to help a widow start her own trade!";
     } else {
-      const wheelchairCount = Math.floor(amount / 75000);
-      const remainder = amount % 75000;
+      const wheelchairCount = Math.floor(amount / 130000);
+      const remainder = amount % 130000;
       
       let text = `Sponsors ${wheelchairCount} high-quality, durable wheelchair${wheelchairCount > 1 ? 's' : ''} to restore complete mobility and dignity to ${wheelchairCount > 1 ? 'disabled individuals' : 'a disabled person'} in Nembe!`;
       
